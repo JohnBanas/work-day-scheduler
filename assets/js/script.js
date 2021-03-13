@@ -1,7 +1,7 @@
 //document ready
 $(function () {
   //moment time
-  let currentDay = ""; 
+  let currentDay = "";
 
   //navbar subtitle
   changeTime = () => {
@@ -10,8 +10,185 @@ $(function () {
     $subtitle.text(currentDay);
   }
   setInterval(changeTime, 1000);
-  
-  //create work-day hours am/pm
+
+  //create work-day hours am/pm in full array
+  let fullDay = [
+    {
+      id: "0",
+      hour: "12",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "am",
+      text: ""
+    },
+    {
+      id: "1",
+      hour: "01",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "am",
+      text: ""
+    },
+    {
+      id: "2",
+      hour: "02",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "am",
+      text: ""
+    },
+    {
+      id: "3",
+      hour: "03",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "am",
+      text: ""
+    },
+    {
+      id: "4",
+      hour: "04",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "am",
+      text: ""
+    },
+    {
+      id: "4",
+      hour: "04",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "am",
+      text: ""
+    },
+    {
+      id: "5",
+      hour: "05",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "am",
+      text: ""
+    },
+    {
+      id: "6",
+      hour: "06",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "am",
+      text: ""
+    },
+    {
+      id: "7",
+      hour: "07",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "am",
+      text: ""
+    },
+    {
+      id: "8",
+      hour: "08",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "am",
+      text: ""
+    },
+    {
+      id: "9",
+      hour: "09",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "am",
+      text: ""
+    },
+    {
+      id: "10",
+      hour: "10",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "am",
+      text: ""
+    },
+    {
+      id: "11",
+      hour: "11",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "am",
+      text: ""
+    },
+    {
+      id: "12",
+      hour: "12",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "pm",
+      text: ""
+    },
+    {
+      id: "13",
+      hour: "01",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "pm",
+      text: ""
+    },
+    {
+      id: "14",
+      hour: "02",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "pm",
+      text: ""
+    },
+    {
+      id: "15",
+      hour: "03",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "pm",
+      text: ""
+    },
+    {
+      id: "16",
+      hour: "04",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "pm",
+      text: ""
+    },
+    {
+      id: "17",
+      hour: "05",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "pm",
+      text: ""
+    },
+    {
+      id: "18",
+      hour: "06",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "pm",
+      text: ""
+    },
+    {
+      id: "19",
+      hour: "07",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "pm",
+      text: ""
+    },
+    {
+      id: "20",
+      hour: "08",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "pm",
+      text: ""
+    },
+    {
+      id: "21",
+      hour: "09",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "pm",
+      text: ""
+    },
+    {
+      id: "22",
+      hour: "10",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "pm",
+      text: ""
+    },
+    {
+      id: "23",
+      hour: "11",
+      minutes: ["00", "15", "30", "45"],
+      ampm: "pm",
+      text: ""
+    }
+  ];
 
   //create non-work-day hours am/pm
 
@@ -35,6 +212,8 @@ $(function () {
 
   //after any changes, save to local storage
 });
+
+//need to check time zone of individual using website
 
 /* extras if possible?
 1- can the user adjust the time of the work day?
