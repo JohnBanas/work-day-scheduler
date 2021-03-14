@@ -450,7 +450,7 @@ $(function () {
     //create save button
     let saveEventBtnContainer = $('<div>').attr({ 'class': 'col-1 remove' });
     let saveEventBtn = $('<button>').attr({ 'class': 'saveBtn', 'type': 'submit', 'id': `${currentHour.id}` });
-    let saveBtnImage = $('<img>').attr({ 'src': '../assets/images/cogs.svg', 'alt': 'Tow gears', 'class': 'iconInject' })
+    let saveBtnImage = $('<img>').attr({ 'src': '../assets/images/cogs.svg', 'alt': 'Two gears', 'class': 'iconInject' })
     let saveBtnText = $('<span>').text('Save').attr({ 'class': 'btnText' });
     saveEventBtnContainer.append(saveEventBtn.append(saveBtnImage, saveBtnText));
     //form container for time block
