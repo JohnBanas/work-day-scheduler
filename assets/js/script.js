@@ -440,11 +440,11 @@ $(function () {
     //<div> needs to be able to change color based on if the hour is past, present, or future
     // compare real time to time on schedule (military times for 
     //logistical problems with AM / PM having the same numbers)
-    if (currentHour.id < moment().format('HH')) {
+    if (currentHour.militaryId < moment().format('HH')) {
       eventText.attr({ 'class': 'past text' });
-    } else if (currentHour.id === moment().format('HH')) {
+    } else if (currentHour.militaryId === moment().format('HH')) {
       eventText.attr({ 'class': 'present text' });
-    } else if (currentHour.id > moment().format('HH')) {
+    } else if (currentHour.militaryId > moment().format('HH')) {
       eventText.attr({ 'class': 'future text' });
     }
     //create save button
