@@ -1,16 +1,35 @@
+root {
+  font-size: 75%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1;
 }
 
-textarea{
+textarea {
   background: transparent;
-  border: none;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+textarea:hover {
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(201, 218, 245, 0.616);
+  font-size: 1rem;
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
+}
+
+.eventDataContainer {
+  padding: 0;
 }
 
 .jumbotron {
@@ -21,11 +40,8 @@ textarea{
   border-bottom: 10px solid black;
 }
 
-.description{
+.time-block {
   white-space: pre-wrap;
-}
-
-.time-block{
   text-align: center;
   border-radius: 15px;
 }
@@ -40,6 +56,8 @@ textarea{
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  text-align: center;
+  padding-top: 2rem;
 }
 
 .past {
@@ -58,14 +76,34 @@ textarea{
 }
 
 .saveBtn {
+  text-align: center;
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
+  width: 100%;
+  height: 100%;
 }
 
-.saveBtn i:hover {
+.btnText {
+  color:rgb(247, 208, 36);
+}
+
+.col-1{
+  padding-left: 0;
+  padding-right: 1rem;
+}
+
+.saveBtn:hover {
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(74, 140, 238, 0.616);
   font-size: 20px;
-  transition: all .3s ease-in-out;
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
+}
+.saveBtn svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 70%;
+  height: 70%;
 }
