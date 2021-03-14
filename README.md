@@ -28,7 +28,7 @@ red for current hour, green for future hours, and gray for past hours.
 (https://johnbanas.github.io/work-day-scheduler/)
 
 ## Example
-(./assets/images/website-img-work-day.png)
+![Work day scheduler image](./assets/images/website-img-work-day.png)
 
 ## Contribution
 Made with :heart: by John Patrick Banas 
