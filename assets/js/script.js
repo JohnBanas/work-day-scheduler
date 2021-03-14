@@ -425,12 +425,12 @@ $(function () {
 
   //iterate through work day hours create <form> for row & input
   workDayHours.forEach(function (currentHour) {
-    let eventRow = $('<form>').attr({ 'class': 'eventRow row' });
+    let eventRow = $('<form>').attr({ 'class': 'row' });
     $('.container').append(eventRow);
     //put workday hours in left side (on md lg size, on sm left underneath)
     let eventTime = $('<div>').text(`${currentHour.hour}:${currentHour.minutes[0]}${currentHour.ampm}`).attr({ 'class': ' col-2 hour eventTime' });
     //event text input container
-    let eventDataContainer = $('<span>').attr({ 'class': 'col-8 time-block eventDataContainer' });
+    let eventDataContainer = $('<div>').attr({ 'class': 'col-8 time-block eventDataContainer' });
     //event text
     let eventText = $('<textarea>').attr({ 'class': 'text', 'id': currentHour.id });
     eventDataContainer.append(eventText);
@@ -448,7 +448,7 @@ $(function () {
       eventText.attr({ 'class': 'future text' });
     }
     //create save button
-    let saveEventBtnContainer = $('<span>').attr({ 'class': 'col-1' });
+    let saveEventBtnContainer = $('<div>').attr({ 'class': 'col-1 remove' });
     let saveEventBtn = $('<button>').attr({ 'class': 'saveBtn', 'type': 'submit', 'id': `${currentHour.id}` });
     let saveBtnImage = $('<img>').attr({ 'src': '../assets/images/cogs.svg', 'alt': 'Tow gears', 'class': 'iconInject' })
     let saveBtnText = $('<span>').text('Save').attr({ 'class': 'btnText' });
@@ -481,38 +481,32 @@ $(function () {
 
   SVGInjector(imageInject);
 
-  let windowSize = window.matchMedia('(max-width: 980px)')
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //create container for elements of <div>
-
-  //put workday hours in left side (on md lg size, on sm left underneath)
-
-  //input text box in center (in between on lg md, on top of buttons on sm)
-
-  //save button on right side (on sm underneath right)
-
-  //<div> is pushed to timeBlock array with its data
-
-  //when input text in <div> is clicked the text data can be changed, if they click off the input, reverts back 
-
+  $(window).resize(function () {
+    if ($(window).width() <= 980) {
+      $('.hour').removeClass('col-2');
+      $('.hour').addClass('col-12 hourSmall'); 
+      $('.time-block').removeClass('col-8');
+      $('.time-block').addClass('col-12 timeBlockSmall');
+      $('.remove').removeClass('col-1');
+      $('.remove').addClass('col-12');
+      $('.saveBtn').addClass('removeSmall');
+      $('.row').addClass('eventRow');
+    } else
+      if ($(window).width() > 980) {
+        $('.hour').removeClass('col-12 hourSmall');
+        $('.hour').addClass('col-2');
+        $('.time-block').removeClass('col-12 timeBlockSmall');
+        $('.time-block').addClass('col-8');
+        $('.remove').removeClass('col-12');
+        $('.saveBtn').removeClass('removeSmall');
+        $('.remove').addClass('col-1');
+        $('.row').removeClass('eventRow');
+      }
+  });
 
 });
 
-//need to check time zone of individual using website
-
-/* extras if possible?
+/* extras for later if possible?
 1- can the user adjust the time of the work day?
 2- can the user choose 1/2 hour or 1/4 hour time increments?
 3- can they adjust the colors of past present future time blocks?
